@@ -19,9 +19,9 @@ plot1 <- function(data = 'household_power_consumption.txt') {
   date2 <- as.Date("2007-02-02") # focusing on
   data <- subset(data, data$Date == date1 | data$Date == date2)
 
-  # Plot the data in a histogram
+  # Plot the data in a histogram, save to png
   png('plot1.png')
-  plot1 <- hist(data$Global_active_power, main = 'Global Active Power', 
+  hist(data$Global_active_power, main = 'Global Active Power', 
               xlab = 'Global Active Power (kilowatts)', 
               ylab = 'Frequency', col = 'red')
   dev.off()
